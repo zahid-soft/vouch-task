@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Checkbox, Form, Input, Col, Row, Typography } from "antd";
+import { Button, Checkbox, Form, Input, Col, Row, Typography,message } from "antd";
 import axios from "axios";
 
 const url = "https://reqres.in/api/login";
@@ -19,10 +19,10 @@ const LoginForm = () => {
     axios
       .post(url, input)
       .then((response) => {
-        console.log(response.data);
+        message.success('Login Success',2);
       })
       .catch((error) => {
-        console.log(error.response.data);
+        message.error(error.response.data.error);
       });
   };
 

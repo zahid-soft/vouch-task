@@ -61,3 +61,13 @@
     
   }
 }
+
+@media only screen and (max-width:1050px) {
+  .loginForm  {
+    max-width: 300px;
+    margin: auto;
+    margin-top: 200px;
+    
+  }
+ 
+}

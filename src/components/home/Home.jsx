@@ -15,19 +15,4 @@ const Home = () => {
 
 export default Home;
 
-{
-  /* <Row>
-        <Col  xxl={{ span: 8 }} lg={{ span: 9, offset: 1 }} span={9}>
-          <LoginForm />
-        </Col>
-        <Col
-          xxl={{ span: 14 }}
-          lg={{ span: 13, offset: 1 }}
-          span={15}
-          sm={0} xs={0}
-          style={{ background: "#023047", width: "100%" }}
-        >
-          <ImageSide />
-        </Col>
-      </Row> */
-}
+

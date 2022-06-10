@@ -1,7 +1,11 @@
 import React from "react";
 import "./App.css";
-import Navbar from './components/navbar/Navbar';
-import Home from './components/home/Home';
+
+// components import
+import Navbar from "./components/navbar/Navbar";
+import Home from "./components/home/Home";
+
+// ant desing import
 import { Layout } from "antd";
 const { Header, Content } = Layout;
 
@@ -9,9 +13,13 @@ function App() {
   return (
     <div className="app">
       <Layout>
-        <Header className="appNavbar"><Navbar /></Header>
+        <Header className="appNavbar">
+          <Navbar />
+        </Header>
         <Layout>
-          <Content ><Home /></Content>
+          <Content>
+            <Home />
+          </Content>
         </Layout>
       </Layout>
     </div>

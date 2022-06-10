@@ -6,29 +6,29 @@
   box-shadow: 0 0 30px 0px #d0d0d0;
 }
 
+/*  Navbar CSS  */
 .navbarButton {
   margin-left: 30px;
 }
 
-/* Home Page css*/
+/*  Home Page CSS */
 .home {
   height: 100vh;
 }
 
-/* ImageSide */
+/*  ImageSide  */
 
 .imageSideContent {
   color: #023047;
   height: 100vh;
 }
 
-/* Login Form CSS */
+/*  Login Form CSS  */
 
-.loginForm  {
+.loginForm {
   max-width: 400px;
   margin: auto;
   margin-top: 250px;
-  
 }
 
 .loginFormHeading {
@@ -40,10 +40,10 @@
   height: 45px;
 }
 
-.loginFormDownSide{
+.loginFormDownSide {
   display: flex;
   justify-content: space-between;
- margin-top: 0px;
+  margin-top: 0px;
 }
 
 .ant-checkbox-checked .ant-checkbox-inner {
@@ -51,23 +51,20 @@
   border-color: #023047;
 }
 
+/*  Responsive CSS */
 
-
-@media only screen and (max-width:480px) {
-  .loginForm  {
+@media only screen and (max-width: 480px) {
+  .loginForm {
     max-width: 300px;
     margin: auto;
     margin-top: 200px;
-    
   }
 }
 
-@media only screen and (max-width:1050px) {
-  .loginForm  {
+@media only screen and (max-width: 1050px) {
+  .loginForm {
     max-width: 300px;
     margin: auto;
     margin-top: 200px;
-    
   }
- 
 }

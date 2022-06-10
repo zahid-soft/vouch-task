@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+
+// ant desing imports
 import {
   Button,
   Checkbox,
@@ -9,26 +11,28 @@ import {
 } from "antd";
 import axios from "axios";
 
-const url = "https://reqres.in/api/login";
+const url = "https://reqres.in/api/login";  // API End Point
 
 const { Title } = Typography;
 
 const LoginForm = () => {
-  const [input, setInput] = useState({
+
+  const [input, setInput] = useState({   // state for handle form inputs
     email: "",
     password: "",
   });
+
 
   const onFinesh = (event) => {
     // event.preventDefault()
     console.log(input);
     axios
-      .post(url, input)
+      .post(url, input)               // API call 
       .then((response) => {
         message.success("Login Success", 2);
       })
       .catch((error) => {
-        message.error(error.response.data.error);
+        message.error(error.response.data.error,2);
       });
   };
 
@@ -88,7 +92,7 @@ const LoginForm = () => {
                 <Checkbox>Remember me</Checkbox>
               </Form.Item>
 
-              <a className="login-form-forgot" href="#" style={{ color: "#023047"}}>
+              <a className="login-form-forgot" href="/" style={{ color: "#023047"}}>
                 Forgot password ?
               </a>
             </div>

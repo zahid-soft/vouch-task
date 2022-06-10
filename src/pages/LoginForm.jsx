@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Button, Checkbox, Form, Input, Col, Row, Typography,message } from "antd";
+import {
+  Button,
+  Checkbox,
+  Form,
+  Input,
+  Typography,
+  message,
+} from "antd";
 import axios from "axios";
 
 const url = "https://reqres.in/api/login";
@@ -7,19 +14,18 @@ const url = "https://reqres.in/api/login";
 const { Title } = Typography;
 
 const LoginForm = () => {
-
   const [input, setInput] = useState({
     email: "",
     password: "",
   });
 
-  const onFinesh = event => {
+  const onFinesh = (event) => {
     // event.preventDefault()
     console.log(input);
     axios
       .post(url, input)
       .then((response) => {
-        message.success('Login Success',2);
+        message.success("Login Success", 2);
       })
       .catch((error) => {
         message.error(error.response.data.error);
@@ -43,25 +49,30 @@ const LoginForm = () => {
         <p style={{ color: "#798488" }}>sub-title text goes here</p>
       </div>
       <div className="loginFormFields">
-        <Form onFinish={onFinesh}>
-          <Form.Item name="Email Address">
+        <Form
+          name="normal_login"
+          className="login-form"
+          initialValues={{
+            remember: true,
+          }}
+          onFinish={onFinesh}
+        >
+          <Form.Item name="email">
             <Input
-              required
               placeholder="Email Address"
-              style={{ height: "2.5rem" }}
               value={input.email}
               onChange={(e) => setInput({ ...input, email: e.target.value })}
-            ></Input>
+            />
           </Form.Item>
-          <Form.Item name="Password">
-            <Input.Password
+          <Form.Item name="password">
+            <Input
+              type="password"
               placeholder="Password"
-              style={{ height: "2.5rem" }}
               value={input.password}
               onChange={(e) => setInput({ ...input, password: e.target.value })}
             />
           </Form.Item>
-          <Form.Item style={{ height: "1.2rem" }}>
+          <Form.Item>
             <Button
               block
               type="primary"
@@ -71,20 +82,22 @@ const LoginForm = () => {
               Login
             </Button>
           </Form.Item>
+          <Form.Item>
+            <div className="loginFormDownSide">
+              <Form.Item name="remember" valuePropName="checked" noStyle>
+                <Checkbox>Remember me</Checkbox>
+              </Form.Item>
+
+              <a className="login-form-forgot" href="#" style={{ color: "#023047"}}>
+                Forgot password ?
+              </a>
+            </div>
+          </Form.Item>
         </Form>
-        <Row style={{ margin: "0px" }}>
-          <Col span={12}>
-            <Checkbox checked="true">Remember Password</Checkbox>
-          </Col>
-          <Col span={12}>
-            <Button type="link" htmlType="button" style={{ color: "#023047" }}>
-              Forget Password ?
-            </Button>
-          </Col>
-        </Row>
       </div>
     </div>
   );
 };
 
 export default LoginForm;
+

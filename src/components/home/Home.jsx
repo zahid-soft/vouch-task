@@ -1,22 +1,33 @@
-import React from 'react'
-import { Col, Row } from 'antd';
-import ImageSide from '../../pages/ImageSide';
-import LoginForm from '../../pages/LoginForm';
+import React from "react";
+import { Col, Row } from "antd";
+import ImageSide from "../../pages/ImageSide";
+import LoginForm from "../../pages/LoginForm";
 const Home = () => {
   return (
-    <div className='home'>
-     <Row>
-      <Col span={9}><LoginForm /></Col>
-      <Col span={15} style={{background:'#023047',width:'100%'}}><ImageSide /></Col>
-    </Row>
+    <div className="home">
+      <Row gutter={[16, 16]}>
+        <Col xs={24} sm={24} md={24} lg={10} xl={10} ><LoginForm /></Col>
+        <Col xs={0} sm={0} md={0} lg={14} xl={14}  style={{ background: "#023047", width: "100%" }}><ImageSide /></Col>
+      </Row>
     </div>
-  )
+  );
+};
+
+export default Home;
+
+{
+  /* <Row>
+        <Col  xxl={{ span: 8 }} lg={{ span: 9, offset: 1 }} span={9}>
+          <LoginForm />
+        </Col>
+        <Col
+          xxl={{ span: 14 }}
+          lg={{ span: 13, offset: 1 }}
+          span={15}
+          sm={0} xs={0}
+          style={{ background: "#023047", width: "100%" }}
+        >
+          <ImageSide />
+        </Col>
+      </Row> */
 }
-
-export default Home
-
-
-{/* <Row>
-<Col span={10}><LoginForm /></Col>
-<Col span={12} style={{background:'#023047',width:'100%',margin:}}><ImageSide /></Col>
-</Row> */}
